@@ -1,3 +1,4 @@
+//With class Buku encapsulation
 class Buku {
   // Properti dengan enkapsulasi menggunakan getter dan setter
   String _judul;
@@ -33,6 +34,26 @@ class Buku {
   }
 }
 
+//With polymorphism
+abstract class Hewan {
+  void bersuara(); // Metode abstrak yang wajib diimplementasikan oleh kelas turunan
+}
+
+class Anjing extends Hewan {
+  @override
+  void bersuara() {
+    print('Gukguk');
+  }
+}
+
+class Kucing extends Hewan {
+  @override
+  void bersuara() {
+    print('Meong');
+  }
+}
+
+//Main function
 void main() {
   var mobil1 = Buku('Joko', 'Widodo', 2020);
   mobil1.bergerak(); // Output: Toyota Merah sedang bergerak.
@@ -41,4 +62,10 @@ void main() {
   mobil1.judul = 'Honda';
   mobil1.penulis = 'Hitam';
   mobil1.bergerak(); // Output: Honda Hitam sedang bergerak.
+
+  var hewan1 = Anjing();
+  var hewan2 = Kucing();
+
+  hewan1.bersuara(); // Output: Mobil sedang bergerak.
+  hewan2.bersuara(); // Output: Sepeda sedang bergerak.
 }
